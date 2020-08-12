@@ -3,11 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import AceEditor from "react-ace";
+import "ace-builds/src-noconflict/mode-java";
+import "ace-builds/src-noconflict/theme-github";
+
+function onChange(newValue) {
+//  console.log("change", newValue);
+}
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <AceEditor
+    mode="java"
+    theme="github"
+    onChange={onChange}
+    name="UNIQUE_ID_OF_DIV"
+    editorProps={{ $blockScrolling: true }}
+  />,
   document.getElementById('root')
 );
 
